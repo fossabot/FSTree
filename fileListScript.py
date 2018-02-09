@@ -26,5 +26,9 @@ for key in config[dirsSection]:
 	print(os.getcwd())
 
 	cmd = ['tree','-alpuhD','--du']
-	returned_output = subprocess.check_output(cmd)
-	print(returned_output.decode('utf-8'))
+	returned_output = subprocess.check_output(cmd).decode('utf-8')
+
+	filename = "tree.txt"
+	file = open(filename, mode='w', encoding='utf-8')
+	print(returned_output, file=file)
+	file.close()
