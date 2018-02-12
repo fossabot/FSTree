@@ -16,7 +16,13 @@ config.read('config.ini')
 sectionsList = config.sections()
 dirsSection = sectionsList[0]
 
+# Fetching preferences
+
+prefsSection = sectionsList[1]
+command = config[prefsSection]['command']
 split_command = shlex.split(command)
+date = datetime.datetime.now().strftime("%d_%b_%y_%a")
+
 # Traversing the list of directories and printing the tree of each directory
 
 for key in config[dirsSection]:
@@ -25,7 +31,6 @@ for key in config[dirsSection]:
 
 	returned_output = subprocess.check_output(split_command).decode('utf-8')
 
-	date = datetime.datetime.now().strftime("%d_%b_%y_%a")
 	directory_name = os.path.split(directory_path)[-1]
 	filename = "{}_{}.txt".format(directory_name, date)
 	print("Filename: " + filename)
