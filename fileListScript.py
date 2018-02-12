@@ -4,6 +4,7 @@ import configparser
 import os
 import subprocess
 import datetime
+import shlex
 
 # Instantiating the configparser to read the 'config.ini'
 
@@ -15,14 +16,14 @@ config.read('config.ini')
 sectionsList = config.sections()
 dirsSection = sectionsList[0]
 
+split_command = shlex.split(command)
 # Traversing the list of directories and printing the tree of each directory
 
 for key in config[dirsSection]:
 	directory_path = config[dirsSection][key]
 	os.chdir(directory_path)
 
-	cmd = ['tree','-alpuhD','--du']
-	returned_output = subprocess.check_output(cmd).decode('utf-8')
+	returned_output = subprocess.check_output(split_command).decode('utf-8')
 
 	date = datetime.datetime.now().strftime("%d_%b_%y_%a")
 	directory_name = os.path.split(directory_path)[-1]
