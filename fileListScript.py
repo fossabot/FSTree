@@ -23,6 +23,8 @@ command = config[prefsSection]['command']
 split_command = shlex.split(command)
 date = datetime.datetime.now().strftime("%d_%b_%y_%a")
 
+destination_path = config[prefsSection]['destination']
+
 # Traversing the list of directories and printing the tree of each directory
 
 for key in config[dirsSection]:
@@ -33,8 +35,11 @@ for key in config[dirsSection]:
 
 	directory_name = os.path.split(directory_path)[-1]
 	filename = "{}_{}.txt".format(directory_name, date)
-	print("Filename: " + filename)
+	destination_file_path = os.path.join(destination_path, filename)
 
-	file = open(filename, mode='w', encoding='utf-8')
+	file = open(destination_file_path, mode='w', encoding='utf-8')
 	print(returned_output, file=file)
 	file.close()
+
+	if os.path.exists(destination_file_path):
+		print("Successfully generated tree for {}".format(directory_name))
