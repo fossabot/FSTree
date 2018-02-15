@@ -9,7 +9,7 @@ import shlex
 # Instantiating the configparser to read the 'config.ini'
 
 config = configparser.ConfigParser()
-basePath = '/mnt/ECA0327EA0324EF8/fileListScript/'
+basePath = os.path.dirname(os.path.realpath(__file__))
 configPath = os.path.join(basePath, 'config.ini')
 config.read(configPath)
 
