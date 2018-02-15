@@ -9,7 +9,9 @@ import shlex
 # Instantiating the configparser to read the 'config.ini'
 
 config = configparser.ConfigParser()
-config.read('config.ini')
+basePath = '/mnt/ECA0327EA0324EF8/fileListScript/'
+configPath = os.path.join(basePath, 'config.ini')
+config.read(configPath)
 
 # Fetching the sections list and storing the name of the first section
 
