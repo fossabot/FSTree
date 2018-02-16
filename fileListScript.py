@@ -5,11 +5,12 @@ import os
 import subprocess
 import datetime
 import shlex
+import sys
 
 # Instantiating the configparser to read the 'config.ini'
 
 config = configparser.ConfigParser()
-basePath = os.path.dirname(os.path.realpath(__file__))
+basePath = sys.path[0]
 configPath = os.path.join(basePath, 'config.ini')
 config.read(configPath)
 
