@@ -1,4 +1,4 @@
-# File List Script# FSTree
+# FSTree
 
 ## What?
 
