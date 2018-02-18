@@ -1,4 +1,6 @@
 # FSTree
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fkaranrajpal14%2FFSTree.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fkaranrajpal14%2FFSTree?ref=badge_shield)
+
 
 ## What?
 
@@ -25,3 +27,7 @@ I did come across a similar situation of late when my HDD died. I couldn't do mu
 You need to have Python 3.x installed to run this. That's the only requirement.
 
 Also, in case you haven't noticed, I'm running the cron job at 2.30 PM everyday. You can modify that as per your requirement by modifying the crontab. To know more on how to schedule the cron job as you deem fit, go through it's syntax [here](https://www.computerhope.com/unix/ucrontab.htm)
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fkaranrajpal14%2FFSTree.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fkaranrajpal14%2FFSTree?ref=badge_large)
